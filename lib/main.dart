@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notes_app/constants/constant.dart';
 import 'package:notes_app/views/notes_view.dart';
 
 void main() {
@@ -14,7 +15,7 @@ class NotesApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        scaffoldBackgroundColor: const Color.fromARGB(255, 45, 44, 44),
+        scaffoldBackgroundColor: KPrimaryColor,
         fontFamily: 'Poppins'
       ),
       home: const NotesView()
