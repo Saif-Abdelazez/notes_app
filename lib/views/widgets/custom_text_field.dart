@@ -21,7 +21,7 @@ class CustomTextField extends StatelessWidget {
           ),
           border: buildBorder(),
           enabledBorder: buildBorder(),
-          focusedBorder: buildBorder()),
+          focusedBorder: buildBorder(KSecondaryColor)),
     );
   }
 
