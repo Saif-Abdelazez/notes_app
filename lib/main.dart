@@ -14,7 +14,8 @@ class NotesApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        scaffoldBackgroundColor: const Color.fromARGB(255, 45, 44, 44)
+        scaffoldBackgroundColor: const Color.fromARGB(255, 45, 44, 44),
+        fontFamily: 'Poppins'
       ),
       home: const NotesView()
     );
