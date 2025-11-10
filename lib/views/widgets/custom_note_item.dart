@@ -17,12 +17,12 @@ class CustomNoteItem extends StatelessWidget {
             ListTile(
               title: Text(
                 'Flutter Tips',
-                style: TextStyle(fontSize: 30),
+                style: TextStyle(fontSize: 28),
               ),
               subtitle: Padding(
                 padding: const EdgeInsets.symmetric(vertical: 16),
                 child: Text(
-                  'build your career with Saif Abdelaziz.',
+                  'Build your career with Saif Abdelaziz.',
                   style: TextStyle(fontSize: 18),
                 ),
               ),
