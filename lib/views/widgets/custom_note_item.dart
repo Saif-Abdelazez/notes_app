@@ -45,7 +45,7 @@ class CustomNoteItem extends StatelessWidget {
                   color: Colors.black.withValues(alpha: .5),
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),
