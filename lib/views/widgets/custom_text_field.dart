@@ -10,7 +10,7 @@ class CustomTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
-      cursorColor: KPrimaryColor,
+      cursorColor: kPrimaryColor,
       onTap: () {},
       maxLines: maxLines,
       style: TextStyle(color: Colors.white),
@@ -21,7 +21,7 @@ class CustomTextField extends StatelessWidget {
           ),
           border: buildBorder(),
           enabledBorder: buildBorder(),
-          focusedBorder: buildBorder(KSecondaryColor)),
+          focusedBorder: buildBorder(kSecondaryColor)),
     );
   }
 
