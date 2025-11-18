@@ -4,9 +4,9 @@ import 'package:notes_app/constants/constant.dart';
 import 'package:notes_app/views/notes_view.dart';
 
 void main() async {
-  await Hive.initFlutter;
+  await Hive.initFlutter();
 
-  await Hive.box(kNotesBox);
+  await Hive.openBox(kNotesBox); // 👈 فتح البوكس صح
   runApp(const NotesApp());
 }
 
