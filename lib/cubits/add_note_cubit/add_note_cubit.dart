@@ -5,11 +5,11 @@ import 'package:notes_app/constants/constant.dart';
 import 'package:notes_app/models/note_model.dart';
 
 part 'add_note_state.dart';
-
+//!step number 2
 class AddNoteCubit extends Cubit<AddNoteState> {
   AddNoteCubit() : super(AddNoteInitial());
-  
-  addNote(NoteModel note) async{
+
+  addNote(NoteModel note) async{ //! Step number 3
     emit(AddNoteLoading());
     try {
     // قبل ما اكتب السطر الجاي لازم اكون عملت  registerAdapter في ال main
