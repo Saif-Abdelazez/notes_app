@@ -49,23 +49,29 @@ class _AddNoteFormState extends State<AddNoteForm> {
           const SizedBox(
             height: 80,
           ),
-          CustomButton(onTap: () {
-            if (formKey.currentState!.validate()) {
-              formKey.currentState!.save();
-              //! Step number 6
-              NoteModel noteModel = NoteModel(
-                  title: title!,
-                  content: content!,
-                  date: DateTime.now().toString(),
-                  color: Colors.blue.r.toInt());
-              BlocProvider.of<AddNoteCubit>(context).addNote(noteModel);
-            } else {
-              autovalidateMode = AutovalidateMode
-                  .always; //!if data was null we always validate for the value
-              setState(() {}); //for update the screen
-            }
-            ; //*used after add onTap in custom button
-          }),
+          BlocBuilder<AddNoteCubit, AddNoteState>(
+            builder: (context, state) {
+              return CustomButton(
+                  isLoading: state is AddNoteLoading ? true : false,
+                  onTap: () {
+                    if (formKey.currentState!.validate()) {
+                      formKey.currentState!.save();
+                      //! Step number 6
+                      NoteModel noteModel = NoteModel(
+                          title: title!,
+                          content: content!,
+                          date: DateTime.now().toString(),
+                          color: Colors.blue.r.toInt());
+                      BlocProvider.of<AddNoteCubit>(context).addNote(noteModel);
+                    } else {
+                      autovalidateMode = AutovalidateMode
+                          .always; //! if data was null we always validate for the value
+                      setState(() {}); //for update the screen
+                    }
+                    ; //*used after add onTap in custom button
+                  });
+            },
+          ),
           const SizedBox(
             height: 20,
           ),
