@@ -14,6 +14,7 @@ class NotesView extends StatelessWidget {
         shape: CircleBorder(),
         onPressed: () {
           showModalBottomSheet(
+            isScrollControlled: true, //* make bottom sheet scroll (we add it after make the bottom padding of the keyboard)
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(16),
               ),
