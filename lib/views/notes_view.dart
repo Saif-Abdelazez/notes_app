@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes_app/constants/constant.dart';
+import 'package:notes_app/cubits/notes/notes_cubit.dart';
 import 'package:notes_app/views/widgets/add_note_bottom_sheet.dart';
 import 'package:notes_app/views/widgets/notes_view_body.dart';
 
@@ -8,25 +10,30 @@ class NotesView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.cyanAccent,
-        shape: CircleBorder(),
-        onPressed: () {
-          showModalBottomSheet(
-            isScrollControlled: true, //* make bottom sheet scroll (we add it after make the bottom padding of the keyboard)
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(16),
-              ),
-              backgroundColor: kPrimaryColor,
-              context: context,
-              builder: (context) {
-                return const AddNoteBottomSheet();
-              });
-        },
-        child: Icon(Icons.add),
+    //!Step number 4
+    return BlocProvider(
+      create: (context) => NotesCubit(),
+      child: Scaffold(
+        floatingActionButton: FloatingActionButton(
+          backgroundColor: Colors.cyanAccent,
+          shape: CircleBorder(),
+          onPressed: () {
+            showModalBottomSheet(
+                isScrollControlled:
+                    true, //* make bottom sheet scroll (we add it after make the bottom padding of the keyboard)
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(16),
+                ),
+                backgroundColor: kPrimaryColor,
+                context: context,
+                builder: (context) {
+                  return const AddNoteBottomSheet();
+                });
+          },
+          child: Icon(Icons.add),
+        ),
+        body: NotesViewBody(),
       ),
-      body: NotesViewBody(),
     );
   }
 }

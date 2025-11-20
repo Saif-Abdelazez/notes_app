@@ -6,6 +6,7 @@ sealed class NotesState extends Equatable {
   @override
   List<Object> get props => [];
 }
+//! step number 1
 
 final class NotesInitial extends NotesState {}
 
