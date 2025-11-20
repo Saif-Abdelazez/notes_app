@@ -6,7 +6,7 @@ abstract class AddNoteState extends Equatable {
   @override
   List<Object> get props => [];
 }
-//! step number 1
+//!add note cubit step number 1
 class AddNoteInitial extends AddNoteState {}
 class AddNoteLoading extends AddNoteState {}
 class AddNoteSuccess extends AddNoteState {}

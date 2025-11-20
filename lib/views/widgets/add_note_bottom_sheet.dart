@@ -8,10 +8,10 @@ class AddNoteBottomSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //!Step number 4
+    //!add note cubit Step number 4
     return BlocProvider(
       create: (context) => AddNoteCubit(),
-        //!Step number 5
+        //!add note cubit Step number 5
       child: BlocConsumer<AddNoteCubit, AddNoteState>(
         listener: (context, state) {
           // in case of success

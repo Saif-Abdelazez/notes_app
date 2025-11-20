@@ -5,21 +5,16 @@ import 'package:notes_app/constants/constant.dart';
 import 'package:notes_app/models/note_model.dart';
 
 part 'notes_state.dart';
-//!Step number 2
+//!Notes cubit Step number 2
 
 class NotesCubit extends Cubit<NotesState> {
   NotesCubit() : super(NotesInitial());
-  //! Step number 3
-
-  fetchAllNotes() async {
-    try {
-      // قبل ما اكتب السطر الجاي لازم اكون عملت  registerAdapter في ال main
-      var noteBox = Hive.box<NoteModel>(
-          kNotesBox); //kNotesBox is identefied in constant.dart file
-      List<NoteModel> notes = noteBox.values.toList(); // get th list from cubit
-      emit(NotesSuccess(notes));
-    } catch (e) {
-      emit(NotesFailure(e.toString()));
-    }
+  //!Notes cubit Step number 3
+  List<NoteModel>? notes;
+  fetchAllNotes() {
+    // قبل ما اكتب السطر الجاي لازم اكون عملت  registerAdapter في ال main
+    var noteBox = Hive.box<NoteModel>(
+        kNotesBox); //kNotesBox is identefied in constant.dart file
+    notes = noteBox.values.toList(); // get th list from cubit
   }
 }

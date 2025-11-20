@@ -10,7 +10,7 @@ class NotesView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //!Step number 4
+    //!Notes cubit Step number 4
     return BlocProvider(
       create: (context) => NotesCubit(),
       child: Scaffold(
