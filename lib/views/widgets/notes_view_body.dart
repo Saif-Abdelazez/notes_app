@@ -15,8 +15,8 @@ class _NotesViewBodyState extends State<NotesViewBody> {
   //!add note cubit Step number 6
   @override
   void initState() {
-    BlocProvider.of<NotesCubit>(context).fetchAllNotes();
     super.initState();
+    BlocProvider.of<NotesCubit>(context).fetchAllNotes();
   }
 
   @override

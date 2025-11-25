@@ -16,5 +16,6 @@ class NotesCubit extends Cubit<NotesState> {
     var noteBox = Hive.box<NoteModel>(
         kNotesBox); //kNotesBox is identefied in constant.dart file
     notes = noteBox.values.toList(); // get th list from cubit
+    emit(NoteSuccess());
   }
 }

@@ -9,3 +9,5 @@ sealed class NotesState extends Equatable {
 //!Notes cubit step number 1
 
 final class NotesInitial extends NotesState {}
+
+final class NoteSuccess extends NotesState {}

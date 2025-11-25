@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 
 class CustomIcon extends StatelessWidget {
   const CustomIcon({
-    super.key, required this.icon,
+    super.key, required this.icon, this.onPressed,
   });
+  final void Function()? onPressed ;
   final IconData icon ;
   @override
   Widget build(BuildContext context) {
@@ -13,7 +14,7 @@ class CustomIcon extends StatelessWidget {
         color: Colors.white.withValues(alpha: .05)
       ),
       child: IconButton(
-        onPressed: () {},
+        onPressed: onPressed,
         icon: Icon(
           icon,
           color: Colors.white,
