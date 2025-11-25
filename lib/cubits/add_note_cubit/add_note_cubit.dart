@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:hive_flutter/adapters.dart';
@@ -9,8 +11,9 @@ part 'add_note_state.dart';
 //!add note cubit step number 2
 class AddNoteCubit extends Cubit<AddNoteState> {
   AddNoteCubit() : super(AddNoteInitial());
-
+  Color color = Color(0xffc1292e);
   addNote(NoteModel note) async {
+    note.color = color.value;
     //!add note cubit Step number 3
     emit(AddNoteLoading());
     try {
